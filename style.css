@@ -1,0 +1,160 @@
+
+:root{
+
+    /** Colors  **/
+
+    /* Primary */
+
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    /* Neutral */
+
+    --Grey-500: hsl(234, 12%, 34%);
+    --Grey-400: rgb(105, 112, 119);
+    --White: hsl(0, 0%, 100%);
+
+    /** Font **/
+
+    --font-size-sm: 0.9375rem; /* 15px / 16px = 0.9375 */
+    --font-size-md: 1.25rem; /* 16px *1.25=20px  */
+    --font-size-lg:1.625rem; /* 16px * 1.625= 26px */
+
+    /* Font weight  */
+
+    --fw-200:200;
+    --fw-400:400;
+    --fw-600:600;
+
+    /** Spacing **/
+    
+    --space-50:4px;
+    --space-100:8px;
+    --space-150:12px;
+    --space-200:16px;
+    --space-250:20px;
+    --space-300:24px;
+    --space-400:32px;
+
+}
+
+*,::after, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--font-size-sm);
+    color: var(--Grey-400);
+}
+
+h1,h2,h3{
+    color: var(--Grey-500);
+}
+
+h1{
+    font-weight:var(--fw-200);
+}
+
+h1 span{
+    font-weight: var(--fw-600);
+}
+
+.wrapper{
+    max-width: 1100px;
+    margin-inline: auto;
+    margin-block-end: 5rem;
+    padding-inline: var(--space-400);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-content{
+    max-width: 500px;
+    margin-block: 5rem;
+    text-align: center;
+
+}
+
+.grid-container{
+    display: grid;
+
+    gap: var(--space-400);
+}
+
+@media(min-width:900px){
+
+    .grid-container{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        /* grid-template-areas: arranging how cards to be laid out on page.
+          Could be thought as blueprint of layout
+        */
+        grid-template-areas: 
+         ".   two   ."
+         "one two   four"
+         "one three four"
+         ".   three .";
+    }
+
+    /* If card are defined outside of media query, they are overlapped  */
+
+    .card:nth-child(1){
+    grid-area: one;
+    }
+
+    .card:nth-child(2){
+        grid-area: two;
+    }
+
+    .card:nth-child(3){
+        grid-area: three;
+    }
+
+    .card:nth-child(4){
+        grid-area: four;
+    }
+
+}
+
+.card{
+    border-radius: 5px;
+    display:flex;
+    flex-direction: column;
+    padding: var(--space-300);
+    gap: 0.25rem;
+    box-shadow: 0 0.5rem 1.25rem rgba(0,0,0, 0.2) ;
+}
+
+.card__image{
+    margin-left: auto;
+    margin-bottom: var( --space-300);
+}
+
+.card__text{
+    margin-bottom: var(--space-200) ;
+}
+
+.cyan{ border-top: 5px solid var(--Cyan);}
+
+.blue{ border-top: 5px solid var(--Blue);}
+
+.red{ border-top: 5px solid var(--Red);}
+
+.orange{ border-top: 5px solid var(--Orange);}
+
+
+
+
+
