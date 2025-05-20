@@ -94,24 +94,22 @@ h1 span{
 
     .grid-container{
 
-        display: grid;
-
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(4,1fr);
 
         /* grid-template-areas: arranging how cards to be laid out on page.
-          Could be thought as blueprint of layout
+        Could be thought as blueprint of layout
         */
         grid-template-areas: 
-         ".   two   ."
-         "one two   four"
-         "one three four"
-         ".   three .";
+        ".   one one   ."
+        "two two three three"
+        ".   four four .";
     }
+
 
     /* If card are defined outside of media query, they are overlapped  */
 
     .card:nth-child(1){
-    grid-area: one;
+        grid-area: one;
     }
 
     .card:nth-child(2){
@@ -126,6 +124,23 @@ h1 span{
         grid-area: four;
     }
 
+}
+
+@media(min-width:1110px){
+
+    .grid-container{
+
+        grid-template-columns: repeat(4,1fr);
+
+        /* grid-template-areas: arranging how cards to be laid out on page.
+        Could be thought as blueprint of layout
+        */
+        grid-template-areas: 
+        ".   two   ."
+        "one two   four"
+        "one three four"
+        ".   three .";
+    }
 }
 
 .card{
