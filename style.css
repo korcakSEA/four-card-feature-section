@@ -54,6 +54,13 @@ html{
     color: var(--Grey-400);
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 h1,h2,h3{
     color: var(--Grey-500);
 }
@@ -90,7 +97,7 @@ h1 span{
     gap: var(--space-400);
 }
 
-@media(min-width:900px){
+@media(min-width:768px){
 
     .grid-container{
 
@@ -126,11 +133,11 @@ h1 span{
 
 }
 
-@media(min-width:1110px){
+@media(min-width:1000px){
 
     .grid-container{
 
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(3,1fr);
 
         /* grid-template-areas: arranging how cards to be laid out on page.
         Could be thought as blueprint of layout
